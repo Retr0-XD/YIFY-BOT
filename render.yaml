@@ -7,4 +7,4 @@ services:
     startCommand: "node index.js"
     envVars:
       - key: TELEGRAM_BOT_TOKEN
-        value: your_telegram_bot_token
+        value: 6408697711:AAG6QKIeowb-YZ-QScMO7vfg5BiZVv2k404
