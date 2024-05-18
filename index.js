@@ -2,7 +2,7 @@ import { Telegraf } from 'telegraf';
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
 import { YifyService } from 'yify-api';
-
+import http from 'http';
 
 dotenv.config();
 
@@ -147,3 +147,11 @@ bot.on('callback_query', async (ctx) => {
 
 
 bot.launch();
+
+const PORT = process.env.PORT || 3000;
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Bot is running\n');
+}).listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
